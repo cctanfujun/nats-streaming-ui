@@ -1,0 +1,20 @@
+version: "3"
+services:
+  nats-streaming-ui:
+    build: .
+    ports:
+      - "8282:8282"
+    networks:
+      - backend
+  
+  nats-front:
+    build: 
+      context: .
+      dockerfile: Dockerfile2
+    ports: 
+      - "8283:80"
+    networks:
+      - backend
+
+networks:
+  backend:
