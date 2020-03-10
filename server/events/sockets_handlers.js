@@ -80,7 +80,7 @@ const handler = async client => {
 
     const clients = resp.data.clients.map(client => {
       return {
-        id: client.id
+        id: client.id,
         inbox: client.hb_inbox,
         subscriptions_number: client.subscriptions
           ? Object.keys(client.subscriptions).length
